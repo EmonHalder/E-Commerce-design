@@ -1,5 +1,5 @@
 .header{
-    background-color: black;
+    background-color: #1C2B35;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,13 +7,13 @@
     padding-right: 100px;
     height: 80px;
 }
-.list a{
+.nav-elements a{
     text-decoration: none;
     color: white;
     margin-left:30px;
     font-weight: 400;
 }
-.list a:hover{
+.nav-elements a:hover{
     color: orange;
     /* text-decoration: underline; */
     /* font-weight: 200; */
