@@ -17,8 +17,44 @@
 }
 .cart h4{
     text-align: center;
-    margin-bottom: 50px;
+  
 }
+
 .color-text{
     color: orange;
+}
+.clear-cart-btn{
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: red;
+    color: white;
+    border: 0px;
+    padding: 5px;
+}
+.clear-cart-btn:hover{
+    font-weight: 550;
+}
+.delete-icon{
+    margin-left: 10px;
+    
+}
+.btn-container{
+    display: grid;
+    grid-template-rows: repeat(2 1fr);
+}
+.review-order{
+    border: 0px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: orange;
+    color: white;
+   
+    padding: 5px;
+    
+}
+.review-order:hover{
+    font-weight: 550;
+}
+.arrow-icon{
+    margin-left: 10px;
 }

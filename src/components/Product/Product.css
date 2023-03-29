@@ -24,6 +24,9 @@
     font-size: 15px;
     line-height: 25px;
     letter-spacing: 0.0015em;
+    height: 70px;
+    position:absolute;
+    bottom: 60px;
 }
 .main-title{
     font-family: 'Lato';
@@ -55,4 +58,10 @@
     margin-right: 20px;
     color: white;
 }
-
+.checked{
+    color: orange;
+}
+.rating{
+    margin-bottom: 0px;
+    
+}

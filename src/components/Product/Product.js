@@ -19,7 +19,13 @@ const Product = (props) => {
 
         <div className="small-text">
           <p>Manufacturer: {seller}</p>
-          <p>Rating: {ratings} start</p>
+          <p className="rating">Rating:  
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star "></span>
+          <span class="fa fa-star "></span>
+           </p>
         </div>
       </div>
       <button onClick={() => productsQuantity(props.products)} className="btn2">
