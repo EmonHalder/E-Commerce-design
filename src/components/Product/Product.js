@@ -24,7 +24,7 @@ const Product = (props) => {
       </div>
       <button onClick={() => productsQuantity(props.products)} className="btn2">
         <span className="btn-text">Add to Cart</span>
-        <FontAwesomeIcon icon={faShoppingCart} />
+        <i class="fa-solid fa-cart-plus"></i>
       </button>
     </div>
   );

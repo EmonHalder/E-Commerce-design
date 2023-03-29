@@ -1,0 +1,24 @@
+.cart{
+    background-color: #1C2B35;
+    color: white;
+    padding: 20px;
+    width: 300px;
+    margin-top: 50px;
+    margin-left: 50px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: 0.0015em;
+    position: sticky;
+    top: 50px;
+}
+.cart h4{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.color-text{
+    color: orange;
+}
