@@ -21,7 +21,7 @@
 }
 
 .color-text{
-    color: orange;
+    color: #FFA41C;
 }
 .clear-cart-btn{
     border-radius: 5px;
@@ -46,7 +46,7 @@
     border: 0px;
     border-radius: 5px;
     margin-top: 10px;
-    background-color: orange;
+    background-color: #FFA41C;
     color: white;
    
     padding: 5px;

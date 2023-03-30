@@ -27,6 +27,7 @@
     height: 70px;
     position:absolute;
     bottom: 60px;
+    font-size: 14px;
 }
 .main-title{
     font-family: 'Lato';
@@ -49,7 +50,7 @@
     
 }
 .btn2:hover{
-    background-color: orange;
+    background-color: #FFA41C;
     font-weight: 600;
     color: #1C2B35;
    
@@ -59,7 +60,8 @@
     color: white;
 }
 .checked{
-    color: orange;
+    color: #FFA41C;
+    
 }
 .rating{
     margin-bottom: 0px;

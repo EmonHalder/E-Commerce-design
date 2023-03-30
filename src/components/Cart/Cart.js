@@ -1,23 +1,31 @@
 import React from "react";
+import { deleteShoppingCart } from "../utilities/fakedb";
 import "./Cart.css";
 
 const Cart = (props) => {
+
   const cart = props.cart;
 
+  let quantity = 0;
   let total = 0;
   let totalShipping = 0;
   for (const product of cart) {
-    total = total + product.price;
+    if(product.quantity===0){
+      product.quantity = 1;
+    }
+    total = total + product.price * product.quantity;
     totalShipping = totalShipping + product.shipping;
+    quantity = quantity + product.quantity;
   }
-  const tax = (total * 7) / 100;
+  const tax = total * 7 / 100;
   const totalPrice = total + totalShipping + tax;
+  
   return (
     <div className="cart">
       <h4>Order Summary</h4>
       <hr />
       <p>
-        Total items: <span className="color-text"> {cart.length}</span>
+        Total items: <span className="color-text"> {quantity}</span>
       </p>
       <p>
         price: <span className="color-text">${total}</span>
@@ -32,8 +40,8 @@ const Cart = (props) => {
         Total price: <span className="color-text">${totalPrice}</span>
       </h5>
       <div className="btn-container">
-        <button className="clear-cart-btn">Clear <span className="delete-icon"><i class="fa-solid fa-trash"></i></span></button>
-        <button className="review-order">Review order <span className="arrow-icon"><i class="fa-solid fa-circle-arrow-right"></i></span></button>
+        <button onClick={deleteShoppingCart} className="clear-cart-btn">Clear <span className="delete-icon"><i className="fa-solid fa-trash"></i></span></button>
+        <button className="review-order">Review order <span className="arrow-icon"><i className="fa-solid fa-circle-arrow-right"></i></span></button>
       </div>
     </div>
   );

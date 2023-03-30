@@ -1,46 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import { addToDb } from '../../utilities/fakedb';
-import Cart from '../Cart/Cart';
-import Product from '../Product/Product';
-import './Shop.css'
+import React, { useEffect, useState } from "react";
+import { addToDb, getShoppingCart } from "../utilities/fakedb";
+import Cart from "../Cart/Cart";
+import Product from "../Product/Product";
+import "./Shop.css";
 
 const Shop = () => {
-    const [products, setProducts]= useState([]);
-    const [cart, setCart]= useState([]);
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
-    useEffect(()=>{
-        fetch('products.json')
-        .then(res=>res.json())
-        .then(data=>setProducts(data))
-    },[]);
-     
-    const productsQuantity=(product)=>{
-        const newCart = [...cart, product];
-        setCart(newCart);
-        addToDb(product.price);
-       }
+  useEffect(() => {
+    fetch("products.json")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
 
-    return (
-        <div className='container'>
+  useEffect(() => {
+    const storeCart = getShoppingCart();
+    let savedCart = [];
 
-            <div className='products'>
-                {
-                    products.map(product=><Product
-                    
-                    key={product.id}
-                    products={product}
-                    productsQuantity={productsQuantity}
-                    ></Product>) 
-                }
-            </div>
+    for (const id in storeCart) {
+      const matchingId = products.find((product) => product.id === id);
+      if (matchingId) {
+        const quantity = storeCart[id];
+        matchingId.quantity = quantity;
+        savedCart.push(matchingId);
+      }
+    }
+    setCart(savedCart);
+  }, [products]);
 
-            <div className='order-summary'>
-               <Cart
-               cart={cart}
-               ></Cart>
-            </div>
-        </div>
-    );
+  const productsQuantity = (product) => {
+    const newCart = [...cart, product];
+    setCart(newCart);
+    addToDb(product.id);
+  };
+
+  return (
+    <div className="container">
+      <div className="products">
+        {products.map((product) => (
+          <Product
+            key={product.id}
+            products={product}
+            productsQuantity={productsQuantity}
+          ></Product>
+        ))}
+      </div>
+
+      <div className="order-summary">
+        <Cart cart={cart}></Cart>
+      </div>
+    </div>
+  );
 };
 
 export default Shop;
