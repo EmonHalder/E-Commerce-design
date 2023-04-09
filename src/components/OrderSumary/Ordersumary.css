@@ -1,0 +1,36 @@
+.orderReview{
+    width: 700px;
+    border: 1px solid #95A0A7;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    height: 103px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    
+}
+.orderReview img{
+    width: 90px;
+    height: 90px;
+    border-radius: 5px;
+}
+.text-color{
+    color: orange;
+}
+.order-info p {
+    margin: 0px 15px;
+}
+.order-info{
+    flex-grow: 1;
+}
+.btn{
+    
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    border:0px;
+    background: rgba(235, 87, 87, 0.3);
+}
+.btn i{
+    color:  #EB5757;
+}

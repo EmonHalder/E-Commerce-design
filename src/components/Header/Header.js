@@ -17,7 +17,7 @@ const Header = () => {
           placeholder="Search Amazon"
         />
         <button className="search-icon">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
 
