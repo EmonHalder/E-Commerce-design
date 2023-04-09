@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { addToDb, getShoppingCart } from "../utilities/fakedb";
+import { addToDb, deleteShoppingCart, getShoppingCart } from "../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -35,6 +36,11 @@ const Shop = () => {
     addToDb(product.id);
   };
 
+  const clearCart=()=>{
+    setCart([]);
+    deleteShoppingCart();
+  }
+
   return (
     <div className="container">
       <div className="products">
@@ -48,7 +54,14 @@ const Shop = () => {
       </div>
 
       <div className="order-summary">
-        <Cart cart={cart}></Cart>
+        <Cart 
+        cart={cart}
+        clearCart={clearCart}
+        >
+          <Link to ="/orders">
+          <button className="reviewOrder">Review Orders <span className="delete-icon"><i className="fa-solid fa-arrow-right-long"></i></span></button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );

@@ -9,3 +9,12 @@
     margin-top: 50px;
     margin-bottom: 50px;
 }
+.reviewOrder{
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color:  #FFA41C;
+    color: white;
+    border: 0px;
+    padding: 5px;
+    width: 260px;
+}

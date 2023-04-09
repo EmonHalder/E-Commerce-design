@@ -1,10 +1,9 @@
 import React from "react";
-import { deleteShoppingCart } from "../utilities/fakedb";
 import "./Cart.css";
 
-const Cart = (props) => {
+const Cart = ({cart, clearCart, children}) => {
 
-  const cart = props.cart;
+  
 
   let quantity = 0;
   let total = 0;
@@ -40,8 +39,8 @@ const Cart = (props) => {
         Total price: <span className="color-text">${totalPrice}</span>
       </h5>
       <div className="btn-container">
-        <button onClick={deleteShoppingCart} className="clear-cart-btn">Clear <span className="delete-icon"><i className="fa-solid fa-trash"></i></span></button>
-        <button className="review-order">Review order <span className="arrow-icon"><i className="fa-solid fa-circle-arrow-right"></i></span></button>
+        <button onClick={clearCart}  className="clear-cart-btn">Clear <span className="delete-icon"><i className="fa-regular fa-trash-can"></i></span></button>
+        {children}
       </div>
     </div>
   );
