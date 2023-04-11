@@ -15,20 +15,20 @@ const Shop = () => {
       .then((data) => setProducts(data));
   }, []);
 
-  useEffect(() => {
-    const storeCart = getShoppingCart();
-    let savedCart = [];
+  // useEffect(() => {
+  //   const storeCart = getShoppingCart();
+  //   let savedCart = [];
 
-    for (const id in storeCart) {
-      const matchingId = products.find((product) => product.id === id);
-      if (matchingId) {
-        const quantity = storeCart[id];
-        matchingId.quantity = quantity;
-        savedCart.push(matchingId);
-      }
-    }
-    setCart(savedCart);
-  }, [products]);
+  //   for (const id in storeCart) {
+  //     const matchingId = products.find((product) => product.id === id);
+  //     if (matchingId) {
+  //       const quantity = storeCart[id];
+  //       matchingId.quantity = quantity;
+  //       savedCart.push(matchingId);
+  //     }
+  //   }
+  //   setCart(savedCart);
+  // }, [products]);
 
   const productsQuantity = (product) => {
     const newCart = [...cart, product];
